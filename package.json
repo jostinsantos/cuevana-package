@@ -1,0 +1,23 @@
+{
+  "id": "cuevana",
+  "name": "Cuevana",
+  "version": "1.0.0",
+  "description": "Catálogo y fuente Cuevana (wv3.cuevana3.eu). Películas y series en español.",
+  "logo": "https://wv3.cuevana3.eu/favicon-32x32.png",
+  "author": "Community",
+  "tags": ["español", "cuevana", "latino"],
+  "addons": [
+    {
+      "id": "cuevana-catalog",
+      "path": "catalog",
+      "type": "catalog",
+      "name": "Cuevana Catalog"
+    },
+    {
+      "id": "cuevana-source",
+      "path": "source",
+      "type": "source",
+      "name": "Cuevana"
+    }
+  ]
+}
