@@ -5,7 +5,11 @@
   "description": "Catálogo y fuente Cuevana (wv3.cuevana3.eu). Películas y series en español.",
   "logo": "https://wv3.cuevana3.eu/favicon-32x32.png",
   "author": "Community",
-  "tags": ["español", "cuevana", "latino"],
+  "tags": [
+    "español",
+    "cuevana",
+    "latino"
+  ],
   "addons": [
     {
       "id": "cuevana-catalog",
