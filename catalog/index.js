@@ -15,6 +15,7 @@ var TMDB_LANG = 'es-MX';
 var GENEROS = [
   'accion', 'aventura', 'animacion', 'ciencia-ficcion', 'crimen',
   'drama', 'familia', 'fantasia', 'misterio', 'romance', 'suspense', 'terror',
+  'comedia',
 ];
 
 var UA =
@@ -234,6 +235,8 @@ async function fetchList(opts) {
       case 'tv':
       case 'serie':
       case 'series':
+      case 'anime':
+      case 'dorama':
         path = '/series';
         break;
       case 'tendencias':
@@ -502,14 +505,30 @@ async function search(args, config) {
 }
 
 async function discover(args, config) {
-  var cat = (args && (args.category || args.tipo)) || 'movie';
+  var cat = String((args && (args.category || args.tipo)) || 'movie').toLowerCase();
   var page = (args && args.page) || 1;
   var genero = (args && (args.genero || args.genre || args.genreId)) || null;
 
-  if (genero && /^\d+$/.test(String(genero))) genero = null;
+  // Géneros Cuevana son slugs (accion, drama...). Si llega id numérico TMDB, ignorar.
+  if (genero != null && /^\d+$/.test(String(genero))) genero = null;
+  if (genero) genero = String(genero).toLowerCase().replace(/\s+/g, '-');
+
+  // Anime / Dorama: Cuevana no tiene sección dedicada → usar listado series + filtro género animacion/drama
+  var tipo = cat;
+  if (cat === 'anime') {
+    tipo = 'series';
+    if (!genero) genero = 'animacion';
+  } else if (cat === 'dorama') {
+    tipo = 'series';
+    if (!genero) genero = 'drama';
+  } else if (cat === 'tv' || cat === 'serie') {
+    tipo = 'series';
+  } else if (cat === 'peliculas' || cat === 'película' || cat === 'pelicula') {
+    tipo = 'movie';
+  }
 
   var result = await fetchList({
-    tipo: genero ? null : cat,
+    tipo: genero ? null : tipo,
     genero: genero,
     page: page,
   });

@@ -1,25 +1,409 @@
 {
   "id": "cuevana-catalog",
   "name": "Cuevana Catalog",
-  "version": "1.2.0",
-  "description": "Catálogo Cuevana + TMDB. IDs tmdb:movie/series para que la app cargue temporadas y capítulos. extra.tmdbId, extra.seasons, géneros.",
+  "version": "1.3.0",
+  "description": "Catálogo Cuevana + TMDB. Tipos: Películas, Series, Anime, Doramas. Géneros por tipo.",
   "logo": "https://wv3.cuevana3.eu/favicon-32x32.png",
   "author": "Community",
-  "types": ["catalog"],
+  "types": [
+    "catalog"
+  ],
   "type": "catalog",
   "entry": "index.js",
-  "resources": ["catalog", "meta", "search"],
-  "exports": ["getHome", "discover", "search", "getMeta"],
-  "supportedTypes": ["movie", "tv"],
-  "contentLanguage": ["es"],
+  "resources": [
+    "catalog",
+    "meta",
+    "search"
+  ],
+  "exports": [
+    "getHome",
+    "discover",
+    "search",
+    "getMeta"
+  ],
+  "supportedTypes": [
+    "movie",
+    "tv",
+    "series"
+  ],
+  "contentLanguage": [
+    "es"
+  ],
   "extra": {
     "provider": "js",
     "language": "es-MX",
+    "packageId": "cuevana",
     "supports": {
       "home": true,
       "discover": true,
       "search": true,
       "contentPage": true
+    },
+    "types": [
+      {
+        "id": "movie",
+        "label": "Películas"
+      },
+      {
+        "id": "series",
+        "label": "Series"
+      },
+      {
+        "id": "anime",
+        "label": "Anime"
+      },
+      {
+        "id": "dorama",
+        "label": "Doramas"
+      }
+    ],
+    "genresByType": {
+      "movie": [
+        {
+          "id": "accion",
+          "name": "Acción"
+        },
+        {
+          "id": "aventura",
+          "name": "Aventura"
+        },
+        {
+          "id": "animacion",
+          "name": "Animación"
+        },
+        {
+          "id": "ciencia-ficcion",
+          "name": "Ciencia ficción"
+        },
+        {
+          "id": "crimen",
+          "name": "Crimen"
+        },
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "familia",
+          "name": "Familia"
+        },
+        {
+          "id": "fantasia",
+          "name": "Fantasía"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "suspense",
+          "name": "Suspense"
+        },
+        {
+          "id": "terror",
+          "name": "Terror"
+        }
+      ],
+      "series": [
+        {
+          "id": "accion",
+          "name": "Acción"
+        },
+        {
+          "id": "aventura",
+          "name": "Aventura"
+        },
+        {
+          "id": "animacion",
+          "name": "Animación"
+        },
+        {
+          "id": "ciencia-ficcion",
+          "name": "Ciencia ficción"
+        },
+        {
+          "id": "crimen",
+          "name": "Crimen"
+        },
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "familia",
+          "name": "Familia"
+        },
+        {
+          "id": "fantasia",
+          "name": "Fantasía"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "suspense",
+          "name": "Suspense"
+        },
+        {
+          "id": "terror",
+          "name": "Terror"
+        }
+      ],
+      "anime": [
+        {
+          "id": "animacion",
+          "name": "Animación"
+        },
+        {
+          "id": "accion",
+          "name": "Acción"
+        },
+        {
+          "id": "aventura",
+          "name": "Aventura"
+        },
+        {
+          "id": "comedia",
+          "name": "Comedia"
+        },
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "fantasia",
+          "name": "Fantasía"
+        },
+        {
+          "id": "ciencia-ficcion",
+          "name": "Ciencia ficción"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "terror",
+          "name": "Terror"
+        }
+      ],
+      "dorama": [
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "comedia",
+          "name": "Comedia"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "crimen",
+          "name": "Crimen"
+        },
+        {
+          "id": "suspense",
+          "name": "Suspense"
+        },
+        {
+          "id": "familia",
+          "name": "Familia"
+        }
+      ]
+    },
+    "genres": {
+      "movie": [
+        {
+          "id": "accion",
+          "name": "Acción"
+        },
+        {
+          "id": "aventura",
+          "name": "Aventura"
+        },
+        {
+          "id": "animacion",
+          "name": "Animación"
+        },
+        {
+          "id": "ciencia-ficcion",
+          "name": "Ciencia ficción"
+        },
+        {
+          "id": "crimen",
+          "name": "Crimen"
+        },
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "familia",
+          "name": "Familia"
+        },
+        {
+          "id": "fantasia",
+          "name": "Fantasía"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "suspense",
+          "name": "Suspense"
+        },
+        {
+          "id": "terror",
+          "name": "Terror"
+        }
+      ],
+      "series": [
+        {
+          "id": "accion",
+          "name": "Acción"
+        },
+        {
+          "id": "aventura",
+          "name": "Aventura"
+        },
+        {
+          "id": "animacion",
+          "name": "Animación"
+        },
+        {
+          "id": "ciencia-ficcion",
+          "name": "Ciencia ficción"
+        },
+        {
+          "id": "crimen",
+          "name": "Crimen"
+        },
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "familia",
+          "name": "Familia"
+        },
+        {
+          "id": "fantasia",
+          "name": "Fantasía"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "suspense",
+          "name": "Suspense"
+        },
+        {
+          "id": "terror",
+          "name": "Terror"
+        }
+      ],
+      "anime": [
+        {
+          "id": "animacion",
+          "name": "Animación"
+        },
+        {
+          "id": "accion",
+          "name": "Acción"
+        },
+        {
+          "id": "aventura",
+          "name": "Aventura"
+        },
+        {
+          "id": "comedia",
+          "name": "Comedia"
+        },
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "fantasia",
+          "name": "Fantasía"
+        },
+        {
+          "id": "ciencia-ficcion",
+          "name": "Ciencia ficción"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "terror",
+          "name": "Terror"
+        }
+      ],
+      "dorama": [
+        {
+          "id": "drama",
+          "name": "Drama"
+        },
+        {
+          "id": "romance",
+          "name": "Romance"
+        },
+        {
+          "id": "comedia",
+          "name": "Comedia"
+        },
+        {
+          "id": "misterio",
+          "name": "Misterio"
+        },
+        {
+          "id": "crimen",
+          "name": "Crimen"
+        },
+        {
+          "id": "suspense",
+          "name": "Suspense"
+        },
+        {
+          "id": "familia",
+          "name": "Familia"
+        }
+      ]
     }
   }
 }
