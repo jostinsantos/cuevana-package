@@ -1,15 +1,23 @@
 {
   "id": "cuevana",
   "name": "Cuevana",
-  "version": "1.0.0",
-  "description": "Catálogo y fuente Cuevana (wv3.cuevana3.eu). Películas y series en español.",
+  "version": "1.5.0",
+  "apiVersion": 1,
+  "minAppVersion": "1.0.0",
+  "description": "Catálogo y fuente Cuevana (wv3.cuevana3.eu). Películas y series en español latino.",
   "logo": "https://wv3.cuevana3.eu/favicon-32x32.png",
   "author": "Community",
-  "tags": [
-    "español",
-    "cuevana",
-    "latino"
-  ],
+  "homepage": "https://wv3.cuevana3.eu",
+  "color": "#E50914",
+  "mode": "vod",
+  "capabilities": ["home", "search", "discover", "meta", "resolve"],
+  "hosts": ["wv3.cuevana3.eu", "api.themoviedb.org", "image.tmdb.org"],
+  "permissions": ["network"],
+  "download": true,
+  "nsfw": false,
+  "discoverable": true,
+  "tags": ["español", "cuevana", "latino", "películas", "series"],
+  "contentLanguage": ["es"],
   "addons": [
     {
       "id": "cuevana-catalog",

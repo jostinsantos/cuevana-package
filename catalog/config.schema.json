@@ -1,15 +1,3 @@
 {
-  "fields": [
-    {
-      "key": "language",
-      "label": "Idioma TMDB (meta)",
-      "type": "select",
-      "default": "es-MX",
-      "options": [
-        { "value": "es-MX", "label": "Español (México)" },
-        { "value": "es-ES", "label": "Español (España)" },
-        { "value": "en-US", "label": "English" }
-      ]
-    }
-  ]
+  "fields": []
 }
